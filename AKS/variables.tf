@@ -24,7 +24,8 @@ variable "aks_dns_prefix" {
 }
 
 variable "system_node_pool_name" {
-  default = "SystemNodePool"
+  description = "Name must start with a lowercase letter, have max length of 12, and only have characters a-z0-9"
+  default = "SystemPool"
   type    = string
 }
 
