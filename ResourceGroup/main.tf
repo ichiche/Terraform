@@ -8,7 +8,7 @@ terraform {
       version = "~> 2.97"
     }
   }
-  
+
   backend "azurerm" {}
 }
 
@@ -17,6 +17,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "myTFResourceGroup"
+  name     = "Terraform-Demo"
   location = "southeastasia"
 }
