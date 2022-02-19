@@ -72,6 +72,7 @@ variable "log_workspace_id" {
 }
 
 variable "container_registry_id" {
+  description = "Require to assign 'User Access Administrator' to AzureRunAsAccount on Container Registry"
   default     = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/ContainerRegistry/providers/Microsoft.ContainerRegistry/registries/cvcoreprdeas001"
   type        = string
 }
