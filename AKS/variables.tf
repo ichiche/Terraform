@@ -35,7 +35,7 @@ variable "system_node_pool_vm_count" {
 }
 
 variable "system_node_pool_vm_size" {
-  default = "Standard_D2s_v3"
+  default = "Standard_D4s_v3"
   type    = string
 }
 
