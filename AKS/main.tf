@@ -26,7 +26,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   location                   = var.aks_location
   resource_group_name        = var.aks_resource_group_name
   kubernetes_version         = var.kubernetes_version
-  dns_prefix_private_cluster = var.aks_dns_prefix 
+  dns_prefix                 = var.aks_dns_prefix 
   local_account_disabled     = true
   tags = {
     Environment = "SIT"
