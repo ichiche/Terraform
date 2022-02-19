@@ -1,10 +1,10 @@
 variable "aks_resource_group_name" {
-  default = "rg-aks-core-sea"
+  default = "rg-aks-core-poc-sea"
   type    = string
 }
 
 variable "aks_location" {
-  default = "southeastasia"
+  default = "eastasia"
   type    = string
 }
 
@@ -57,7 +57,7 @@ variable "system_node_pool_vm_size" {
 }
 
 variable "system_node_pool_subnet_id" {
-  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-sit-hk-peak/subnets/subnet-sit-hk-peak-aks"
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak/subnets/subnet-poc-hk-peak-aks"
   type    = string
 }
 
