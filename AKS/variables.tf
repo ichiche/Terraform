@@ -52,7 +52,7 @@ variable "os_disk_size_gb" {
 
 variable "system_node_pool_vm_size" {
   description = "If Ephemeral is enabled, VM size that must has a cache larger than node OS disk configuration"
-  default     = "Standard_D2s_v5"
+  default     = "standard_d2s_v4"
   type        = string
 }
 
