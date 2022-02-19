@@ -35,10 +35,10 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   default_node_pool {
     name               = var.system_node_pool_name
     node_count         = var.system_node_pool_vm_count
-    vm_size            = var.system_node_pool_vm_size
     os_sku             = var.os_sku
-    os_disk_size_gb    = var.os_disk_size_gb
     os_disk_type       = var.os_disk_type 
+    os_disk_size_gb    = var.os_disk_size_gb
+    vm_size            = var.system_node_pool_vm_size
     vnet_subnet_id     = var.system_node_pool_subnet_id
     max_pods           = var.system_node_pool_max_pods 
     availability_zones = [1,2,3]
