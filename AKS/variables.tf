@@ -9,7 +9,7 @@ variable "aks_location" {
 }
 
 variable "aks_name" {
-  default = "aks-sit-sea-001"
+  default = "aks-sit-eas-001"
   type    = string
 }
 
