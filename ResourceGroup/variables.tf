@@ -1,5 +1,5 @@
 variable "resource_group_name" {
-  default = "TerraformDemo"
+  default = "Demo"
 }
 
 variable "resource_group_location" {
