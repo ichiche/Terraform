@@ -31,8 +31,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   tags = {
     Environment = "SIT"
   }
-  depends_on = [azurerm_resource_group.aks_rg]
-
+  
   default_node_pool {
     name               = var.system_node_pool_name
     node_count         = var.system_node_pool_vm_count
@@ -66,4 +65,6 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   oms_agent {
     log_analytics_workspace_id = var.log_workspace_id
   }
+
+  depends_on = [azurerm_resource_group.aks_rg]
 }
