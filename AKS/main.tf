@@ -31,6 +31,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   tags = {
     Environment = "SIT"
   }
+  depends_on = [azurerm_resource_group.aks_rg]
 
   default_node_pool {
     name               = var.system_node_pool_name
