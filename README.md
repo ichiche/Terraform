@@ -15,6 +15,8 @@ All scripts in repository are used for DevTest only.
 
 https://docs.microsoft.com/en-us/azure/aks/faq#what-is-azure-cni-transparent-mode-vs-bridge-mode
 
+https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks
+
 https://docs.microsoft.com/en-us/azure/aks/cluster-configuration?WT.mc_id=Portal-Microsoft_Azure_Expert#ephemeral-os
 
 https://docs.microsoft.com/en-us/azure/aks/managed-aad#azure-ad-authentication-overview
