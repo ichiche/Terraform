@@ -1,5 +1,5 @@
 variable "aks_resource_group_name" {
-  default = "rg-aks-core-poc-sea"
+  default = "rg-aks-core-poc-eas"
   type    = string
 }
 
