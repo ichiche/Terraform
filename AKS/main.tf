@@ -28,10 +28,8 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   kubernetes_version         = var.kubernetes_version
   dns_prefix                 = var.aks_dns_prefix 
   local_account_disabled     = true
-  tags = {
-    Environment = "SIT"
-  }
-  
+  tags                       = var.tags
+
   default_node_pool {
     name               = var.system_node_pool_name
     node_count         = var.system_node_pool_vm_count
@@ -69,7 +67,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   depends_on = [azurerm_resource_group.aks_rg]
 }
 
-resource "azurerm_role_assignment" "example" {
+resource "azurerm_role_assignment" "acr" {
   principal_id                     = azurerm_kubernetes_cluster.aks_cluster.kubelet_identity[0].object_id
   role_definition_name             = "AcrPull"
   scope                            = var.container_registry_id
