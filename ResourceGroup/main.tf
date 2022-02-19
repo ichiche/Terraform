@@ -8,6 +8,8 @@ terraform {
   }
 
   required_version = "1.1.6"
+
+  backend "remote" {}
 }
 
 provider "azurerm" {
@@ -16,5 +18,5 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "myTFResourceGroup"
-  location = "Southeast Asia"
+  location = "southeastasia"
 }
