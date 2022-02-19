@@ -17,6 +17,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "Terraform-Demo"
-  location = "southeastasia"
+  name     = var.resource_group_name
+  location = var.resource_group_location
 }
