@@ -75,3 +75,11 @@ variable "container_registry_id" {
   default     = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/ContainerRegistry/providers/Microsoft.ContainerRegistry/registries/cvcoreprdeas001"
   type        = string
 }
+
+variable "tags" {
+  description = "Specifies tags for the resources"
+  default     = {
+    Environment = "SIT"
+    createdWith = "Terraform"
+  }
+}
