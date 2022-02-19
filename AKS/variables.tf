@@ -4,7 +4,7 @@ variable "aks_resource_group_name" {
 }
 
 variable "aks_location" {
-  default = "eastasia"
+  default = "East Asia"
   type    = string
 }
 
