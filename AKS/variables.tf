@@ -35,7 +35,7 @@ variable "system_node_pool_vm_count" {
 }
 
 variable "system_node_pool_vm_size" {
-  default = "Standard_D2s_v4"
+  default = "Standard_D2s_v3"
   type    = string
 }
 
@@ -44,8 +44,15 @@ variable "os_sku" {
   type    = string
 }
 
+variable "os_disk_size_gb" {
+  default = 128
+  type    = number
+}
+
 variable "os_disk_type" {
+  description = "Dv4 and Dsv4-series does not support Ephemeral OS disk"
   default = "Ephemeral"
+  type    = string
 }
 
 variable "system_node_pool_subnet_id" {
