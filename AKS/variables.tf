@@ -25,8 +25,8 @@ variable "aks_dns_prefix" {
 
 variable "system_node_pool_name" {
   description = "Name must start with a lowercase letter, have max length of 12, and only have characters a-z0-9"
-  default = "systempool"
-  type    = string
+  default     = "systempool"
+  type        = string
 }
 
 variable "system_node_pool_vm_count" {
@@ -34,14 +34,15 @@ variable "system_node_pool_vm_count" {
   type    = number
 }
 
-variable "system_node_pool_vm_size" {
-  default = "Standard_D4s_v3"
-  type    = string
-}
-
 variable "os_sku" {
   default = "Ubuntu"
   type    = string
+}
+
+variable "os_disk_type" {
+  description = "Enter 'Managed' or 'Ephemeral'"
+  default     = "Managed"
+  type        = string
 }
 
 variable "os_disk_size_gb" {
@@ -49,10 +50,10 @@ variable "os_disk_size_gb" {
   type    = number
 }
 
-variable "os_disk_type" {
-  description = "Dv4 and Dsv4-series does not support Ephemeral OS disk"
-  default = "Ephemeral"
-  type    = string
+variable "system_node_pool_vm_size" {
+  description = "If Ephemeral is enabled, VM size that must has a cache larger than node OS disk configuration"
+  default     = "Standard_D2s_v3"
+  type        = string
 }
 
 variable "system_node_pool_subnet_id" {
