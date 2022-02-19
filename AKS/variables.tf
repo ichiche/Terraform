@@ -52,7 +52,7 @@ variable "system_node_pool_subnet_id" {
   type    = string
 }
 
-variable "system_node_pool_max_pods " {
+variable "system_node_pool_max_pods" {
   default = 80
   type    = number
 }
