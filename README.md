@@ -21,11 +21,18 @@ https://docs.microsoft.com/en-us/azure/aks/use-network-policies#network-policy-o
 https://docs.microsoft.com/en-us/azure/aks/managed-aad#azure-ad-authentication-overview
 https://azure.github.io/PSRule.Rules.Azure/en/rules/Azure.AKS.DNSPrefix/
 
-#### Egress with a User-Defined Route
+#### Egress Control
 https://docs.microsoft.com/en-us/azure/aks/egress-outboundtype
+https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#restrict-egress-traffic-using-azure-firewall
+
+#### Integrate with Azure Container Registry
+https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
 
 #### Terraform
 https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
+
+#### Issue: Running (0/0 nodes ready) 
+https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
 
 ### VM
 
