@@ -23,9 +23,9 @@ variable "kubernetes_version" {
 }
 
 variable "aks_dns_prefix" {
-  description = ""
+  description = "DNS prefix to use with hosted Kubernetes API server FQDN. If not specified, generate a hostname using the managed cluster and resource group names"
   type    = string
-  default = "ichichedemo"
+  default = "aksdemo"
 }
 
 variable "system_node_pool_name" {
