@@ -29,19 +29,19 @@ resource "azurerm_user_assigned_identity" "aks_cluster_identity" {
   depends_on = [azurerm_resource_group.aks_rg]
 }
 
-resource "azurerm_role_assignment" "private_dns_zone" {
+resource "azurerm_role_assignment" "aks_vnet" {
   principal_id                     = azurerm_user_assigned_identity.aks_cluster_identity.principal_id
-  role_definition_name             = "Private DNS Zone Contributor"
-  scope                            = var.private_dns_zone_id
+  role_definition_name             = "Contributor"
+  scope                            = var.aks_vnet_id
   skip_service_principal_aad_check = true
 
   depends_on = [azurerm_user_assigned_identity.aks_cluster_identity]
 }
 
-resource "azurerm_role_assignment" "aks_vnet" {
+resource "azurerm_role_assignment" "private_dns_zone" {
   principal_id                     = azurerm_user_assigned_identity.aks_cluster_identity.principal_id
-  role_definition_name             = "Contributor"
-  scope                            = var.aks_vnet_id
+  role_definition_name             = "Private DNS Zone Contributor"
+  scope                            = var.private_dns_zone_id
   skip_service_principal_aad_check = true
 
   depends_on = [azurerm_user_assigned_identity.aks_cluster_identity]
@@ -97,7 +97,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     log_analytics_workspace_id = var.log_workspace_id
   }
 
-  depends_on = [azurerm_role_assignment.private_dns_zone, azurerm_role_assignment.aks_vnet]
+  depends_on = [azurerm_role_assignment.aks_vnet, azurerm_role_assignment.private_dns_zone]
 }
 
 resource "azurerm_kubernetes_cluster_node_pool" "user_node_pool_1" {

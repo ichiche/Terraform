@@ -11,6 +11,14 @@ All scripts in repository are used for DevTest only.
 | 1 | Binary | 1.1.6 | https://www.terraform.io/downloads | 
 | 2 | azurerm | 2.97.0 | https://registry.terraform.io/providers/hashicorp/azurerm/2.97.0 |
 
+# Permission
+
+Require to assign 'User Access Administrator' to AzureRunAsAccount on below resources for role assignment during provisioning
+
+- AKS VNet
+- Private DNS Zone
+- Container Registry
+
 # Reference
 
 ### AKS

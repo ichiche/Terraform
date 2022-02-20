@@ -58,16 +58,16 @@ variable "outbound_type" {
   default     = ""
 }*/
 
-variable "private_dns_zone_id" {
-  description = "Resource Id of Private DNS Zone"
-  type    = string
-  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/rg-privatedns-core-poc-eas/providers/Microsoft.Network/privateDnsZones/privatelink.eastasia.azmk8s.io"
-}
-
 variable "aks_vnet_id" {
   description = "Resource Id of AKS VNet"
   type    = string
   default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak"
+}
+
+variable "private_dns_zone_id" {
+  description = "Resource Id of Private DNS Zone"
+  type    = string
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/rg-privatedns-core-poc-eas/providers/Microsoft.Network/privateDnsZones/privatelink.eastasia.azmk8s.io"
 }
 
 variable "log_workspace_id" {
@@ -77,7 +77,7 @@ variable "log_workspace_id" {
 }
 
 variable "container_registry_id" {
-  description = "Resource Id of Azure Container Registry (ACR). Require to assign 'User Access Administrator' to AzureRunAsAccount on ACR for role assignment during provisioning"
+  description = "Resource Id of Azure Container Registry (ACR)"
   type        = string
   default     = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/ContainerRegistry/providers/Microsoft.ContainerRegistry/registries/cvcoreprdeas001"
 }
