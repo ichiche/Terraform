@@ -68,6 +68,8 @@ https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
 
 > ### Managed Identity
 
+https://docs.microsoft.com/en-us/azure/aks/use-managed-identity#summary-of-managed-identities
+
 https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/guides/managed_service_identity
 
 ---
