@@ -79,7 +79,7 @@ variable "system_node_pool_max_pods" {
 variable "outbound_type" {
   description = "The outbound (egress) routing method which should be used for Kubernetes Cluster. Supported values are 'loadBalancer' or 'userDefinedRouting'"
   type        = string
-  default     = "userDefinedRouting"
+  default     = "loadBalancer"
 }
 
 /*variable "network_policy" {
