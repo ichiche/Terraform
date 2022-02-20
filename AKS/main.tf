@@ -27,15 +27,17 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   resource_group_name        = var.aks_resource_group_name
   kubernetes_version         = var.kubernetes_version
   dns_prefix                 = var.aks_dns_prefix 
-  local_account_disabled     = true
+  sku_tier                   = var.sku_tier
   tags                       = var.tags
+  azure_policy_enabled       = true
+  local_account_disabled     = true
 
   default_node_pool {
     name               = var.system_node_pool_name
     node_count         = var.system_node_pool_vm_count
-    os_sku             = var.os_sku
-    os_disk_type       = var.os_disk_type 
-    os_disk_size_gb    = var.os_disk_size_gb
+    os_sku             = var.system_node_pool_os_sku
+    os_disk_type       = var.system_node_pool_os_disk_type 
+    os_disk_size_gb    = var.system_node_pool_os_disk_size_gb
     vm_size            = var.system_node_pool_vm_size
     vnet_subnet_id     = var.system_node_pool_subnet_id
     max_pods           = var.system_node_pool_max_pods 
@@ -71,6 +73,24 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   depends_on = [azurerm_resource_group.aks_rg]
 }
 
+resource "azurerm_kubernetes_cluster_node_pool" "user_node_pool_1" {
+  name                  = var.user_node_pool_1_name
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.aks_cluster.id
+  node_count            = var.user_node_pool_1_vm_count
+  orchestrator_version  = var.user_node_pool_1_orchestrator_version
+  os_sku                = var.user_node_pool_1_os_sku
+  os_disk_type          = var.user_node_pool_1_os_disk_type 
+  os_disk_size_gb       = var.user_node_pool_1_os_disk_size_gb
+  vm_size               = var.user_node_pool_1_vm_size
+  vnet_subnet_id        = var.system_node_pool_subnet_id # At this time the vnet_subnet_id must be the same for all node pools in the cluster
+  mode                  = var.user_node_pool_1_mode
+  max_pods              = var.user_node_pool_1_max_pods
+  availability_zones    = [1,2,3]
+  tags                  = var.tags
+
+  depends_on = [azurerm_kubernetes_cluster.aks_cluster]
+}
+
 resource "azurerm_role_assignment" "acr" {
   principal_id                     = azurerm_kubernetes_cluster.aks_cluster.kubelet_identity[0].object_id
   role_definition_name             = "AcrPull"
@@ -79,3 +99,4 @@ resource "azurerm_role_assignment" "acr" {
 
   depends_on = [azurerm_kubernetes_cluster.aks_cluster]
 }
+
