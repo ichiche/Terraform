@@ -5,7 +5,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 2.97"
+      version = "2.97.0"
     }
   }
 
@@ -16,15 +16,15 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
+resource "azurerm_resource_group" "dns_rg" {
+  name     = var.private_dns_zone_resource_group_name
+  location = var.private_dns_zone_location
 }
 
-resource "azurerm_private_dns_zone" "example" {
-  name                = "privatelink.eastus2.azmk8s.io"
-  resource_group_name = azurerm_resource_group.example.name
-  tags                       = var.tags
+resource "azurerm_private_dns_zone" "dns" {
+  name                = var.private_dns_zone_name
+  resource_group_name = var.private_dns_zone_resource_group_name
+  tags                = var.tags
 
-  depends_on = [aws_iam_role_policy.example]
+  depends_on = [azurerm_resource_group.dns_rg]
 }
