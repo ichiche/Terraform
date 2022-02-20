@@ -21,6 +21,9 @@ https://docs.microsoft.com/en-us/azure/aks/use-network-policies#network-policy-o
 https://docs.microsoft.com/en-us/azure/aks/managed-aad#azure-ad-authentication-overview
 https://azure.github.io/PSRule.Rules.Azure/en/rules/Azure.AKS.DNSPrefix/
 
+#### Egress with a User-Defined Route
+https://docs.microsoft.com/en-us/azure/aks/egress-outboundtype
+
 #### Terraform
 https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
 
