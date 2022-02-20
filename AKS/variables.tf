@@ -148,7 +148,7 @@ variable "user_node_pool_1_os_sku" {
   default = "Ubuntu"
 }
 
-variable "user_node_pool_1_os_disk_type " {
+variable "user_node_pool_1_os_disk_type" {
   description = "Supported values are 'Managed' and 'Ephemeral'"
   type        = string
   default     = "Managed"
