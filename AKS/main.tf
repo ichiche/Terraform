@@ -48,15 +48,18 @@ resource "azurerm_role_assignment" "private_dns_zone" {
 }
 
 resource "azurerm_kubernetes_cluster" "aks_cluster" {
-  name                       = var.aks_name
-  location                   = var.aks_location
-  resource_group_name        = var.aks_resource_group_name
-  kubernetes_version         = var.kubernetes_version
-  dns_prefix = var.aks_dns_prefix 
-  sku_tier                   = var.sku_tier
-  tags                       = var.tags
-  azure_policy_enabled       = true
-  local_account_disabled     = true
+  name                                = var.aks_name
+  location                            = var.aks_location
+  resource_group_name                 = var.aks_resource_group_name
+  kubernetes_version                  = var.kubernetes_version
+  dns_prefix_private_cluster          = var.aks_dns_prefix 
+  sku_tier                            = var.sku_tier
+  private_dns_zone_id                 = var.private_dns_zone_id
+  private_cluster_enabled             = true
+  private_cluster_public_fqdn_enabled = false
+  azure_policy_enabled                = true
+  local_account_disabled              = true
+  tags                                = var.tags
 
   default_node_pool {
     name               = var.system_node_pool_name
