@@ -41,13 +41,13 @@ variable "system_node_pool_vm_count" {
 }
 
 variable "os_sku" {
-  description = "OS SKU of the agent node pool. Enter 'Ubuntu' or 'CBLMariner'"
+  description = "OS SKU of the agent node pool. Supported values are 'Ubuntu' or 'CBLMariner'"
   type    = string
   default = "Ubuntu"
 }
 
 variable "os_disk_type" {
-  description = "Enter 'Managed' or 'Ephemeral'"
+  description = "Supported values are 'Managed' or 'Ephemeral'"
   type        = string
   default     = "Managed"
 }
@@ -74,6 +74,12 @@ variable "system_node_pool_max_pods" {
   description = "The maximum number of pods per node in an AKS cluster is 250"
   type    = number
   default = 80
+}
+
+variable "outbound_type" {
+  description = "The outbound (egress) routing method which should be used for Kubernetes Cluster. Supported values are 'loadBalancer' or 'userDefinedRouting'"
+  type        = string
+  default     = "userDefinedRouting"
 }
 
 variable "network_policy" {

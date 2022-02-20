@@ -60,6 +60,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     network_plugin    = "azure"
     network_mode      = "transparent"
     load_balancer_sku = "Standard"
+    outbound_type = var.outbound_type
     #network_policy   = var.network_policy
   }
   
