@@ -17,7 +17,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "aks_rg" {
-  name     = var.aks_resource_group_name
+  name     = var.resource_group_name
   location = var.aks_location
 }
 
