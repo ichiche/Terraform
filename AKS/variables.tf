@@ -76,6 +76,12 @@ variable "system_node_pool_max_pods" {
   default = 80
 }
 
+variable "network_policy" {
+  description = "Supported values are 'azure' and 'calico'"
+  type        = string
+  default     = ""
+}
+
 variable "log_workspace_id" {
   description = ""
   type    = string
