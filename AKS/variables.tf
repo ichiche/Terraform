@@ -82,11 +82,11 @@ variable "outbound_type" {
   default     = "userDefinedRouting"
 }
 
-variable "network_policy" {
+/*variable "network_policy" {
   description = "Supported values are 'azure' and 'calico'"
   type        = string
   default     = ""
-}
+}*/
 
 variable "log_workspace_id" {
   description = ""
