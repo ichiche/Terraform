@@ -4,6 +4,12 @@ variable "aks_resource_group_name" {
   default = "rg-aks-core-poc-eas"
 }
 
+variable "aks_cluster_identity_name" {
+  description = "User Assigned Identity of Azure Kubernetes Service (Managed Service)"
+  type    = string
+  default = "id-aks-sit-eas-001"
+}
+
 variable "aks_location" {
   description = "Azure Region of Azure Kubernetes Service (Managed Service)"
   type    = string
@@ -51,6 +57,18 @@ variable "outbound_type" {
   type        = string
   default     = ""
 }*/
+
+variable "private_dns_zone_id" {
+  description = "Resource Id of Private DNS Zone"
+  type    = string
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/rg-privatedns-core-poc-eas/providers/Microsoft.Network/privateDnsZones/privatelink.eastasia.azmk8s.io"
+}
+
+variable "aks_vnet_id" {
+  description = "Resource Id of AKS VNet"
+  type    = string
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak"
+}
 
 variable "log_workspace_id" {
   description = "Resource Id of Log Analytics Workspace for Insight"
@@ -131,15 +149,15 @@ variable "user_node_pool_1_name" {
 }
 
 variable "user_node_pool_1_vm_count" {
-  description = "Recommend at least 2 nodes for System Node Pool"
+  description = "Recommend at least 3 nodes for Manual Scale User Node Pool"
   type    = number
-  default = 2
+  default = 3
 }
 
 variable "user_node_pool_1_orchestrator_version" {
   description = "Version of Kubernetes used for the Agent Pool"
   type        = string
-  default     = "1.20.15"
+  default     = "1.22.4"
 }
 
 variable "user_node_pool_1_os_sku" {

@@ -21,12 +21,38 @@ resource "azurerm_resource_group" "aks_rg" {
   location = var.aks_location
 }
 
+resource "azurerm_user_assigned_identity" "aks_cluster_identity" {
+  name                = var.aks_cluster_identity_name
+  location            = var.aks_location
+  resource_group_name = var.aks_resource_group_name
+
+  depends_on = [azurerm_resource_group.aks_rg]
+}
+
+resource "azurerm_role_assignment" "private_dns_zone" {
+  principal_id                     = azurerm_user_assigned_identity.aks_cluster_identity.principal_id
+  role_definition_name             = "Private DNS Zone Contributor"
+  scope                            = var.private_dns_zone_id
+  skip_service_principal_aad_check = true
+
+  depends_on = [azurerm_user_assigned_identity.aks_cluster_identity]
+}
+
+resource "azurerm_role_assignment" "aks_vnet" {
+  principal_id                     = azurerm_user_assigned_identity.aks_cluster_identity.principal_id
+  role_definition_name             = "Contributor"
+  scope                            = var.aks_vnet_id
+  skip_service_principal_aad_check = true
+
+  depends_on = [azurerm_user_assigned_identity.aks_cluster_identity]
+}
+
 resource "azurerm_kubernetes_cluster" "aks_cluster" {
   name                       = var.aks_name
   location                   = var.aks_location
   resource_group_name        = var.aks_resource_group_name
   kubernetes_version         = var.kubernetes_version
-  dns_prefix                 = var.aks_dns_prefix 
+  dns_prefix = var.aks_dns_prefix 
   sku_tier                   = var.sku_tier
   tags                       = var.tags
   azure_policy_enabled       = true
@@ -46,7 +72,8 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   }
 
   identity {
-    type = "SystemAssigned"
+    type = "UserAssigned"
+    user_assigned_identity_id = azurerm_user_assigned_identity.aks_cluster_identity.id
   }
 
   role_based_access_control {
@@ -70,7 +97,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     log_analytics_workspace_id = var.log_workspace_id
   }
 
-  depends_on = [azurerm_resource_group.aks_rg]
+  depends_on = [azurerm_role_assignment.private_dns_zone, azurerm_role_assignment.aks_vnet]
 }
 
 resource "azurerm_kubernetes_cluster_node_pool" "user_node_pool_1" {
