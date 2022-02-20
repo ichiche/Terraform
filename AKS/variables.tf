@@ -1,11 +1,11 @@
 variable "aks_resource_group_name" {
-  description = "Resource Group of Kubernetes Service. This is NOT the Resource Group of VMSS"
+  description = "Resource Group of Azure Kubernetes Service (Managed Service). This is NOT the Resource Group of VMSS which is actual AKS Instance"
   type    = string
   default = "rg-aks-core-poc-eas"
 }
 
 variable "aks_location" {
-  description = ""
+  description = "Azure Region of Azure Kubernetes Service (Managed Service)"
   type    = string
   default = "East Asia"
 }
@@ -28,6 +28,7 @@ variable "aks_dns_prefix" {
   default = "aksdemo"
 }
 
+# Default Node Pool Section Start
 variable "system_node_pool_name" {
   description = "Name must start with a lowercase letter, have max length of 12, and only have characters a-z0-9"
   type        = string
@@ -53,7 +54,7 @@ variable "os_disk_type" {
 }
 
 variable "os_disk_size_gb" {
-  description = ""
+  description = "OS Disk Size"
   type    = number
   default = 128
 }
@@ -65,7 +66,7 @@ variable "system_node_pool_vm_size" {
 }
 
 variable "system_node_pool_subnet_id" {
-  description = ""
+  description = "Resource Id of Subnet for AKS VNet customization"
   type    = string
   default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak/subnets/subnet-poc-hk-peak-aks"
 }
@@ -75,11 +76,18 @@ variable "system_node_pool_max_pods" {
   type    = number
   default = 80
 }
+# Default Node Pool Section End
 
 variable "outbound_type" {
-  description = "The outbound (egress) routing method which should be used for Kubernetes Cluster. Supported values are 'loadBalancer' or 'userDefinedRouting'"
+  description = <<EOT
+  1. The outbound (egress) routing method which should be used for Kubernetes Cluster. 
+  2. Supported values are 'loadBalancer' or 'userDefinedRouting'. 
+  3. If 'userDefinedRouting' is used, Default route 0.0.0.0/0 from route table must be associated with subnet prior to AKS creation.
+  4. Default route 0.0.0.0/0 must have the next hops of VirtualAppliance or VirtualNetworkGateway only.
+  5. If AKS and VirtualAppliance / VirtualNetworkGateway locate in different Virtual Networks, those Virtual Networks must be peered prior to AKS creation.
+  EOT
   type        = string
-  default     = "loadBalancer"
+  default     = "userDefinedRouting"
 }
 
 /*variable "network_policy" {
@@ -89,7 +97,7 @@ variable "outbound_type" {
 }*/
 
 variable "log_workspace_id" {
-  description = ""
+  description = "Resource Id of Log Analytics Workspace for Insight"
   type    = string
   default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Log/providers/Microsoft.OperationalInsights/workspaces/log-analytics-aks-prd-eas-001"
 }
