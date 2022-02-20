@@ -13,11 +13,14 @@ All scripts in repository are used for DevTest only.
 
 # Permission Delegation
 
-For role assignment during provisioning, grant 'User Access Administrator' to Azure-Run-As-Account used by Terraform on below resources
+- For role assignment during provisioning, grant 'User Access Administrator' to Azure-Run-As-Account used by Terraform on below resources
+  - Private DNS Zone
+  - Container Registry
 
-- AKS VNet
-- Private DNS Zone
-- Container Registry
+- For resource provisioning, grant 'Contributor' to Azure-Run-As-Account used by Terraform on below resources
+  - AKS Resource Group (If RG is pre-created) **OR** Subscription Level (If RG is created by Terraform Script)
+  - AKS VNet
+
 
 # Reference
 
