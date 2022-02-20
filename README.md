@@ -35,21 +35,21 @@ https://docs.microsoft.com/en-us/azure/aks/managed-aad#azure-ad-authentication-o
 
 https://azure.github.io/PSRule.Rules.Azure/en/rules/Azure.AKS.DNSPrefix/
 
-#### Private DNS Zone for AKS
+##### Private DNS Zone for AKS
 
 https://docs.microsoft.com/en-us/azure/aks/private-clusters#configure-private-dns-zone
 
-#### Egress Control
+##### Egress Control
 
 https://docs.microsoft.com/en-us/azure/aks/egress-outboundtype
 
 https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#restrict-egress-traffic-using-azure-firewall
 
-#### Integrate with Azure Container Registry
+##### Integrate with Azure Container Registry
 
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
 
-#### Terraform
+##### Terraform
 
 https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
 
@@ -59,7 +59,7 @@ https://github.com/hashicorp/terraform-provider-azurerm/issues/10193
 
 https://github.com/hashicorp/terraform-provider-azurerm/issues/9379
 
-#### Issue: Running (0/0 nodes ready) 
+##### Issue: Running (0/0 nodes ready) 
 
 https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
 
@@ -69,7 +69,7 @@ https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/guides/man
 
 ### VM
 
-#### VM Size
+##### Size
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/dv4-dsv4-series
 
@@ -78,7 +78,7 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable
 
-#### Ephemeral OS Disk
+##### Ephemeral OS Disk
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks
 
