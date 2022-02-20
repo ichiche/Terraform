@@ -50,6 +50,7 @@ https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#restrict-egress-
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
 
 ##### Terraform
+https://docs.microsoft.com/en-us/samples/azure-samples/private-aks-cluster-terraform-devops/private-aks-cluster-terraform-devops/
 
 https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
 

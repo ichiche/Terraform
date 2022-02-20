@@ -49,7 +49,7 @@ variable "outbound_type" {
   5. If AKS and VirtualAppliance / VirtualNetworkGateway locate in different Virtual Networks, those Virtual Networks must be peered prior to AKS creation.
   EOT
   type        = string
-  default     = "userDefinedRouting"
+  default     = "loadBalancer"
 }
 
 /*variable "network_policy" {
