@@ -21,7 +21,6 @@ All scripts in repository are used for DevTest only.
   - AKS Resource Group (If RG is pre-created) **OR** Subscription Level (If RG is created by Terraform Script)
   - AKS VNet
 
-
 # Reference
 
 > ### AKS
@@ -66,6 +65,10 @@ https://github.com/hashicorp/terraform-provider-azurerm/issues/9379
 ##### Issue: Running (0/0 nodes ready) 
 
 https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
+
+##### FAQ
+
+https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the-aks-node-resource-group
 
 ---
 
