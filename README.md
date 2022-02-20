@@ -24,3 +24,7 @@ https://docs.microsoft.com/en-us/azure/aks/managed-aad#azure-ad-authentication-o
 https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/dv4-dsv4-series
+
+https://azure.github.io/PSRule.Rules.Azure/en/rules/Azure.AKS.DNSPrefix/
+
+https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni

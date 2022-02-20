@@ -11,7 +11,7 @@ variable "aks_location" {
 }
 
 variable "aks_name" {
-  description = ""
+  description = "Name of Azure Kubernetes Service (Managed Service)"
   type    = string
   default = "aks-sit-eas-001"
 }
