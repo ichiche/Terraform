@@ -1,14 +1,17 @@
-variable "resource_group_name" {
+variable "aks_resource_group_name" {
+  description = "Resource Group of Kubernetes Service. This is NOT the Resource Group of VMSS"
   type    = string
   default = "rg-aks-core-poc-eas"
 }
 
 variable "aks_location" {
+  description = ""
   type    = string
   default = "East Asia"
 }
 
 variable "aks_name" {
+  description = ""
   type    = string
   default = "aks-sit-eas-001"
 }
@@ -20,6 +23,7 @@ variable "kubernetes_version" {
 }
 
 variable "aks_dns_prefix" {
+  description = ""
   type    = string
   default = "ichichedemo"
 }
@@ -31,11 +35,13 @@ variable "system_node_pool_name" {
 }
 
 variable "system_node_pool_vm_count" {
+  description = "Recommend at least 2 nodes for System Node Pool"
   type    = number
   default = 2
 }
 
 variable "os_sku" {
+  description = "OS SKU of the agent node pool. Enter 'Ubuntu' or 'CBLMariner'"
   type    = string
   default = "Ubuntu"
 }
@@ -47,6 +53,7 @@ variable "os_disk_type" {
 }
 
 variable "os_disk_size_gb" {
+  description = ""
   type    = number
   default = 128
 }
@@ -58,16 +65,19 @@ variable "system_node_pool_vm_size" {
 }
 
 variable "system_node_pool_subnet_id" {
+  description = ""
   type    = string
   default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak/subnets/subnet-poc-hk-peak-aks"
 }
 
 variable "system_node_pool_max_pods" {
+  description = "The maximum number of pods per node in an AKS cluster is 250"
   type    = number
   default = 80
 }
 
 variable "log_workspace_id" {
+  description = ""
   type    = string
   default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Log/providers/Microsoft.OperationalInsights/workspaces/log-analytics-aks-prd-eas-001"
 }
