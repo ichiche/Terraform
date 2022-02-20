@@ -17,7 +17,7 @@ variable "tags" {
   description = "Specifies tags for the resources"
   type        = map
   default     = {
-    Environment = "SIT"
+    Environment = "All"
     CreatedBy = "Terraform"
   }
 }

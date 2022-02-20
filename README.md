@@ -28,3 +28,5 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/dv4-dsv4-series
 https://azure.github.io/PSRule.Rules.Azure/en/rules/Azure.AKS.DNSPrefix/
 
 https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni
+
+https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
