@@ -21,7 +21,7 @@ For role assignment during provisioning, grant 'User Access Administrator' to Az
 
 # Reference
 
-### AKS
+> ### AKS
 
 https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni
 
@@ -63,11 +63,15 @@ https://github.com/hashicorp/terraform-provider-azurerm/issues/9379
 
 https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
 
-### Managed Identity
+---
+
+> ### Managed Identity
 
 https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/guides/managed_service_identity
 
-### VM
+---
+
+> ### VM
 
 ##### Size
 
@@ -84,10 +88,14 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks
 
 https://docs.microsoft.com/en-us/azure/aks/cluster-configuration?WT.mc_id=Portal-Microsoft_Azure_Expert#ephemeral-os
 
-### Private DNS Zone
+---
+
+> ### Private DNS Zone
 
 https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-dns#azure-services-dns-zone-configuration
 
-### Recommended abbreviations for Azure resource types
+---
+
+> ### Recommended Abbreviation
 
 https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations
