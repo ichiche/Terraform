@@ -122,7 +122,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "user_node_pool_1" {
 }
 
 resource "azurerm_role_assignment" "acr" {
-  principal_id                     = azurerm_kubernetes_cluster.aks_cluster.kubelet_identity[0].object_id
+  principal_id                     = azurerm_kubernetes_cluster.aks_cluster.kubelet_identity[0].object_id # This role is assigned to the kubelet managed identity
   role_definition_name             = "AcrPull"
   scope                            = var.container_registry_id
   skip_service_principal_aad_check = true

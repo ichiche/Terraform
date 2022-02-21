@@ -29,7 +29,7 @@ variable "kubernetes_version" {
 }
 
 variable "aks_dns_prefix" {
-  description = "DNS prefix to use with hosted Kubernetes API server FQDN. If not specified, generate a hostname using the managed cluster and resource group names"
+  description = "DNS prefix is used with hosted Kubernetes API server FQDN. If not specified, generate a hostname using the managed cluster and resource group names"
   type    = string
   default = "aksdemo"
 }
@@ -123,7 +123,7 @@ variable "system_node_pool_os_disk_size_gb" {
 }
 
 variable "system_node_pool_vm_size" {
-  description = "If Ephemeral is enabled, target VM size must has a cache larger than node OS disk configuration"
+  description = "If Ephemeral is enabled, selected VM size must has a cache and temp storage larger than node OS disk configuration"
   type        = string
   default     = "standard_d2s_v4"
 }
@@ -179,7 +179,7 @@ variable "user_node_pool_1_os_disk_size_gb" {
 }
 
 variable "user_node_pool_1_vm_size" {
-  description = "If Ephemeral is enabled, target VM size must has a cache larger than node OS disk configuration"
+  description = "If Ephemeral is enabled, selected VM size must has a cache and temp storage larger than node OS disk configuration"
   type        = string
   default     = "standard_d2s_v4"
 }
