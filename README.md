@@ -11,8 +11,6 @@ All scripts in repository are used for DevTest only.
 | 1 | Binary | 1.1.6 | https://www.terraform.io/downloads | 
 | 2 | azurerm | 2.97.0 | https://registry.terraform.io/providers/hashicorp/azurerm/2.97.0 |
 
----
-
 # Permission Delegation
 
 - For role assignment during provisioning, grant 'User Access Administrator' to Azure-Run-As-Account used by Terraform on below resources
@@ -22,8 +20,6 @@ All scripts in repository are used for DevTest only.
 - For resource provisioning, grant 'Contributor' to Azure-Run-As-Account used by Terraform on below resources
   - AKS Resource Group (If RG is pre-created) **OR** Subscription Level (If RG is created by Terraform Script)
   - AKS Virtual Network
-
----
 
 # Azure Kubernetes Service (AKS)
 
@@ -107,8 +103,6 @@ https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-wi
 
 https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the-aks-node-resource-group
 
----
-
 # Authentication and Authorization
 
 ### **AKS-managed Azure Active Directory integration**
@@ -119,15 +113,11 @@ https://docs.microsoft.com/en-us/azure/aks/managed-aad#azure-ad-authentication-o
 
 https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac
 
----
-
 # Managed Identity
 
 ### **All type of Managed Identity for AKS**
 
 https://docs.microsoft.com/en-us/azure/aks/use-managed-identity#summary-of-managed-identities
-
----
 
 # Virtual Machine
 
@@ -150,14 +140,9 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks
 
 https://docs.microsoft.com/en-us/azure/aks/cluster-configuration?WT.mc_id=Portal-Microsoft_Azure_Expert#ephemeral-os
 
----
-
 # Private DNS Zone
 
 https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-dns#azure-services-dns-zone-configuration
-
-
----
 
 # Proximity Placement Group
 
@@ -167,13 +152,9 @@ https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-dns#azure-s
 
 https://docs.microsoft.com/en-us/azure/aks/reduce-latency-ppg
 
----
-
 # Recommended Abbreviation
 
 https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations
-
----
 
 # Terraform
 
@@ -182,6 +163,27 @@ https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best
 https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/guides/managed_service_identity
 
 https://registry.terraform.io/modules/bcochofel/aks/azurerm/latest/examples/user-assigned-identity
+
+### Assigns a given Principal (User or Group) to a given Role
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment
+
+### Private DNZ Zone
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_dns_zone
+
+### Azure Kubernetes Service
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster
+
+### Kubernetes Cluster Node Pool
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster_node_pool
+
+### Attaching a Container Registry to a Kubernetes Cluster
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry#example-usage-attaching-a-container-registry-to-a-kubernetes-cluster
+
 
 ### Issue Log
 
