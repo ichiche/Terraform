@@ -123,7 +123,7 @@ variable "system_node_pool_os_disk_size_gb" {
 }
 
 variable "system_node_pool_vm_size" {
-  description = "If Ephemeral is enabled, selected VM size must has a cache and temp storage larger than node OS disk configuration"
+  description = "If Ephemeral is enabled, selected VM size must has a cache and temp storage larger than node OS disk size"
   type        = string
   default     = "standard_d2s_v4"
 }
@@ -179,7 +179,7 @@ variable "user_node_pool_1_os_disk_size_gb" {
 }
 
 variable "user_node_pool_1_vm_size" {
-  description = "If Ephemeral is enabled, selected VM size must has a cache and temp storage larger than node OS disk configuration"
+  description = "If Ephemeral is enabled, selected VM size must has a cache and temp storage larger than node OS disk size"
   type        = string
   default     = "standard_d2s_v4"
 }
