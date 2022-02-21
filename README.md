@@ -142,7 +142,7 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable
 
 **Limitations**
 
-Selected VM size must has a cache and temp storage larger than node OS disk configuration
+- Selected VM size must has a cache and temp storage larger than node OS disk configuration
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks
 
