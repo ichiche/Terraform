@@ -23,7 +23,7 @@ All scripts in repository are used for DevTest only.
 
 # Reference
 
-> ### AKS
+> ### Azure Kubernetes Service (AKS)
 
 #### Private DNS Zone for AKS
 
