@@ -59,7 +59,7 @@ https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-crea
 
 At this time the subnet must be the same for all node pools in the cluster
 
-Add a node pool with a unique subnet is still preview feature with **limitation**
+Add a node pool with a unique subnet is still preview feature with :warning: **Limitation**
 
 https://docs.microsoft.com/en-us/azure/aks/use-multiple-node-pools#add-a-node-pool-with-a-unique-subnet-preview
 
@@ -136,7 +136,7 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable
 
 ### Ephemeral OS Disk
 
-**Limitations**
+:warning: **Limitation**
 
 - Selected VM size must has a cache and temp storage larger than node OS disk configuration
 
@@ -150,7 +150,7 @@ https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-dns#azure-s
 
 # Proximity Placement Group
 
-**Limitations**
+:warning: **Limitation**
 
 - A proximity placement group can map to at most one availability zone
 
