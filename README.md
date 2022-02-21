@@ -4,7 +4,7 @@
 All scripts in repository are used for DevTest only.
 ```
 
-# Prerequisites
+# Prerequisites and Version
 
 | Item | Name | Version | Installation | 
 | - | - | - | - | 
@@ -13,7 +13,7 @@ All scripts in repository are used for DevTest only.
 
 # Permission Delegation
 
-> **Azure-Run-As-Account** is the account used by Terraform for executing task in Azure
+> :memo: **Azure-Run-As-Account** is the account used by Terraform for executing task in Azure
 
 - For role assignment during provisioning, grant **User Access Administrator** to **Azure-Run-As-Account** on below resources
   - Private DNS Zone
