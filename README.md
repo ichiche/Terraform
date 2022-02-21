@@ -21,6 +21,7 @@ All scripts in repository are used for DevTest only.
 
 - For resource provisioning, grant **Contributor** to **Azure-Run-As-Account** on below resources
   - AKS Virtual Network (Assume already exist)
+  - Log Analytics Workspace (Assume already exist)
   - Any of the following apply:
     - AKS Resource Group (Assume Resource Group is pre-created)
     - Subscription Level (Assume Resource Group is created by Terraform Script)
