@@ -25,11 +25,11 @@ All scripts in repository are used for DevTest only.
 
 > ### AKS
 
-##### Private DNS Zone for AKS
+#### Private DNS Zone for AKS
 
 https://docs.microsoft.com/en-us/azure/aks/private-clusters#configure-private-dns-zone
 
-##### Outbound (Egress) Control
+#### Outbound (Egress) Control
 
 1. The outbound (egress) routing method which should be used for Kubernetes Cluster. 
 1. Supported values are 'loadBalancer' and 'userDefinedRouting'. 
@@ -41,17 +41,17 @@ https://docs.microsoft.com/en-us/azure/aks/egress-outboundtype
 
 https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#restrict-egress-traffic-using-azure-firewall
 
-##### Integrate with Azure Container Registry
+#### Integrate with Azure Container Registry
 
 This role is assigned to the kubelet managed identity
 
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
 
-##### Azure CLI Command
+#### Azure CLI Command
 
 https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create
 
-##### Parameter
+#### Parameter
 
 **Virtual Network and Subnet**
 
@@ -89,11 +89,11 @@ https://docs.microsoft.com/en-us/azure/aks/use-network-policies#network-policy-o
 
 https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-onboard
 
-##### Issue: Running (0/0 nodes ready) 
+#### Issue: Running (0/0 nodes ready) 
 
 https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
 
-##### Quick Start
+#### Quick Start
 
 https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-rm-template
 
@@ -101,7 +101,7 @@ https://docs.microsoft.com/en-us/samples/azure-samples/private-aks-cluster-terra
 
 https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
 
-##### FAQ
+#### FAQ
 
 https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the-aks-node-resource-group
 
@@ -129,7 +129,7 @@ https://docs.microsoft.com/en-us/azure/aks/use-managed-identity#summary-of-manag
 
 > ### VM
 
-##### Size
+#### Size
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/dv4-dsv4-series
 
@@ -138,7 +138,7 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable
 
-##### Ephemeral OS Disk
+#### Ephemeral OS Disk
 
 **Limitations**
 
@@ -175,13 +175,13 @@ https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best
 
 > ### Terraform
 
-##### Managed Identity
+#### Managed Identity
 
 https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/guides/managed_service_identity
 
 https://registry.terraform.io/modules/bcochofel/aks/azurerm/latest/examples/user-assigned-identity
 
-##### Issue Log
+#### Issue Log
 
 https://github.com/hashicorp/terraform-provider-azurerm/issues/10193
 
