@@ -15,20 +15,26 @@ All scripts in repository are used for DevTest only.
 
 > :memo: **Azure-Run-As-Account** is the account used by Terraform for executing task in Azure
 
-- For role assignment during provisioning, grant **User Access Administrator** to **Azure-Run-As-Account** on below resources (Assume already exist)
-  - AKS Virtual Network
-  - Private DNS Zone
-  - Container Registry
+#### For role assignment during provisioning, grant **User Access Administrator** to **Azure-Run-As-Account** on below resources
 
-- For resource provisioning, grant **Contributor** to **Azure-Run-As-Account** on below resources
-  - Any of the following apply:
-    1 Approach 1 (Assume below resources are pre-created)
-      - AKS Resource Group
-      - AKS Virtual Network
-      - Private DNS Zone 
-      - Log Analytics Workspace
-    1 Approach 2
-      - Subscription Level (Assume Resource Group is created by Terraform Script)
+- AKS Virtual Network
+- Private DNS Zone
+- Container Registry
+
+#### For resource provisioning, grant **Contributor** to **Azure-Run-As-Account** on below resources
+
+Any of the following apply:
+
+**Approach 1** 
+
+  - AKS Resource Group (Precreated)
+  - AKS Virtual Network
+  - Private DNS Zone 
+  - Log Analytics Workspace
+
+**Approach 2**
+
+  - Subscription Level 
 
 # Azure Kubernetes Service (AKS)
 
