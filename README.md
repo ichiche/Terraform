@@ -15,11 +15,15 @@ All scripts in repository are used for DevTest only.
 
 > :memo: **Azure-Run-As-Account** is the account used by Terraform for executing task in Azure
 
+> :bulb: Least privilege of provisioning
+
 For role assignment during provisioning, grant **User Access Administrator** to **Azure-Run-As-Account** on below resources
 
 - AKS Virtual Network (Resource Level)
 - Private DNS Zone (Resource Level)
 - Container Registry (Resource Level)
+
+---
 
 For resource provisioning, grant **Contributor** to **Azure-Run-As-Account** on below resources
 
