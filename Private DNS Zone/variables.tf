@@ -3,7 +3,7 @@ variable "private_dns_zone_resource_group_name" {
   default = "rg-privatedns-core-poc-eas"
 }
 
-variable "private_dns_zone_location" {
+variable "private_dns_zone_resource_group_location" {
   type    = string
   default = "East Asia"
 }

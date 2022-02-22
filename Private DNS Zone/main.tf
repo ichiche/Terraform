@@ -18,7 +18,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "dns_rg" {
   name     = var.private_dns_zone_resource_group_name
-  location = var.private_dns_zone_location
+  location = var.private_dns_zone_resource_group_location # This is Location of Resource Group, Private DNS Zone is Global Region
 }
 
 resource "azurerm_private_dns_zone" "dns" {
