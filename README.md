@@ -15,22 +15,22 @@ All scripts in repository are used for DevTest only.
 
 > :memo: **Azure-Run-As-Account** is the account used by Terraform for executing task in Azure
 
-#### For role assignment during provisioning, grant **User Access Administrator** to **Azure-Run-As-Account** on below resources
+For role assignment during provisioning, grant **User Access Administrator** to **Azure-Run-As-Account** on below resources
 
-- AKS Virtual Network
-- Private DNS Zone
-- Container Registry
+- AKS Virtual Network (Resource Level)
+- Private DNS Zone (Resource Level)
+- Container Registry (Resource Level)
 
-#### For resource provisioning, grant **Contributor** to **Azure-Run-As-Account** on below resources
+For resource provisioning, grant **Contributor** to **Azure-Run-As-Account** on below resources
 
 Any of the following apply:
 
-**Approach 1** 
+**Approach 1** (Recommended)
 
   - AKS Resource Group (Precreated)
-  - AKS Virtual Network
-  - Private DNS Zone 
-  - Log Analytics Workspace
+  - AKS Virtual Network (Resource Level)
+  - Private DNS Zone (Resource Level)
+  - Log Analytics Workspace (Resource Level)
 
 **Approach 2**
 
@@ -154,6 +154,12 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable
 https://docs.microsoft.com/en-us/azure/virtual-machines/ephemeral-os-disks
 
 https://docs.microsoft.com/en-us/azure/aks/cluster-configuration?WT.mc_id=Portal-Microsoft_Azure_Expert#ephemeral-os
+
+# Azure Firewall
+
+- Required outbound network rules and FQDNs for AKS clusters
+
+https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#required-outbound-network-rules-and-fqdns-for-aks-clusters
 
 # Private DNS Zone
 
