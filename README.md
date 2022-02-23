@@ -46,18 +46,6 @@ Any of the following apply:
 
 https://docs.microsoft.com/en-us/azure/aks/private-clusters#configure-private-dns-zone
 
-### Outbound (Egress) Control
-
-1. The outbound (egress) routing method which should be used for Kubernetes Cluster. 
-1. Supported values are 'loadBalancer' and 'userDefinedRouting'. 
-1. If 'userDefinedRouting' is used, Default route 0.0.0.0/0 from route table must be associated with subnet prior to AKS creation.
-1. Default route 0.0.0.0/0 must have the next hops of VirtualAppliance or VirtualNetworkGateway only.
-1. If AKS and VirtualAppliance / VirtualNetworkGateway locate in different Virtual Networks, those Virtual Networks must be peered prior to AKS creation.
-
-https://docs.microsoft.com/en-us/azure/aks/egress-outboundtype
-
-https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#restrict-egress-traffic-using-azure-firewall
-
 ### Integrate with Azure Container Registry
 
 This role is assigned to the kubelet managed identity
@@ -68,7 +56,40 @@ https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integratio
 
 https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create
 
-### Parameter
+
+### Issue: Running (0/0 nodes ready) 
+
+https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
+
+### Quick Start
+
+https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-rm-template
+
+https://docs.microsoft.com/en-us/samples/azure-samples/private-aks-cluster-terraform-devops/private-aks-cluster-terraform-devops/
+
+https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
+
+### FAQ
+
+https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the-aks-node-resource-group
+
+# Authentication and Authorization
+
+### **AKS-managed Azure Active Directory integration**
+
+https://docs.microsoft.com/en-us/azure/aks/managed-aad#azure-ad-authentication-overview
+
+### **Azure RBAC for Kubernetes**
+
+https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac
+
+# Managed Identity
+
+### **All type of Managed Identity for AKS**
+
+https://docs.microsoft.com/en-us/azure/aks/use-managed-identity#summary-of-managed-identities
+
+# Function and Feature (Script Parameter)
 
 > **Virtual Network and Subnet**
 
@@ -77,6 +98,18 @@ At this time the subnet must be the same for all node pools in the cluster
 Add a node pool with a unique subnet is still preview feature with :warning: **Limitation**
 
 https://docs.microsoft.com/en-us/azure/aks/use-multiple-node-pools#add-a-node-pool-with-a-unique-subnet-preview
+
+> **Outbound (Egress) Control**
+
+1. The outbound (egress) routing method which should be used for Kubernetes Cluster. 
+1. Supported values are 'loadBalancer' and 'userDefinedRouting'. 
+1. If 'userDefinedRouting' is used, Default route 0.0.0.0/0 from route table must be associated with subnet prior to AKS creation.
+1. Default route 0.0.0.0/0 must have the next hops of VirtualAppliance or VirtualNetworkGateway only.
+1. If AKS and VirtualAppliance / VirtualNetworkGateway locate in different Virtual Networks, those Virtual Networks must be peered prior to AKS creation.
+
+https://docs.microsoft.com/en-us/azure/aks/egress-outboundtype
+
+https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#restrict-egress-traffic-using-azure-firewall
 
 > **Azure CNI**
 
@@ -117,38 +150,6 @@ az feature register --namespace "Microsoft.Compute" --name "EncryptionAtHost"
 ```
 
 https://docs.microsoft.com/en-us/azure/aks/enable-host-encryption
-
-### Issue: Running (0/0 nodes ready) 
-
-https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
-
-### Quick Start
-
-https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-rm-template
-
-https://docs.microsoft.com/en-us/samples/azure-samples/private-aks-cluster-terraform-devops/private-aks-cluster-terraform-devops/
-
-https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
-
-### FAQ
-
-https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the-aks-node-resource-group
-
-# Authentication and Authorization
-
-### **AKS-managed Azure Active Directory integration**
-
-https://docs.microsoft.com/en-us/azure/aks/managed-aad#azure-ad-authentication-overview
-
-### **Azure RBAC for Kubernetes**
-
-https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac
-
-# Managed Identity
-
-### **All type of Managed Identity for AKS**
-
-https://docs.microsoft.com/en-us/azure/aks/use-managed-identity#summary-of-managed-identities
 
 # Virtual Machine
 
@@ -193,7 +194,7 @@ https://docs.microsoft.com/en-us/azure/aks/reduce-latency-ppg
 
 https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations
 
-# Terraform
+# Terraform Reference
 
 ### Managed Identity
 
