@@ -108,6 +108,14 @@ https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insigh
 
 > **Host-based encryption**
 
+```PowerShell
+# Verify EncryptionAtHost feature is registered
+az feature show --namespace "Microsoft.Compute" --name "EncryptionAtHost"
+
+# Register EncryptionAtHost feature
+az feature register --namespace "Microsoft.Compute" --name "EncryptionAtHost"
+```
+
 https://docs.microsoft.com/en-us/azure/aks/enable-host-encryption
 
 ### Issue: Running (0/0 nodes ready) 
