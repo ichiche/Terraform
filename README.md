@@ -46,6 +46,8 @@ Any of the following apply:
 
 https://docs.microsoft.com/en-us/azure/aks/private-clusters#configure-private-dns-zone
 
+https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-dns#azure-services-dns-zone-configuration
+
 ### Integrate with Azure Container Registry
 
 This role is assigned to the kubelet managed identity
@@ -55,7 +57,6 @@ https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integratio
 ### Azure CLI Command
 
 https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create
-
 
 ### Issue: Running (0/0 nodes ready) 
 
@@ -68,10 +69,6 @@ https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-rm-template
 https://docs.microsoft.com/en-us/samples/azure-samples/private-aks-cluster-terraform-devops/private-aks-cluster-terraform-devops/
 
 https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
-
-### FAQ
-
-https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the-aks-node-resource-group
 
 # Authentication and Authorization
 
@@ -89,7 +86,7 @@ https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac
 
 https://docs.microsoft.com/en-us/azure/aks/use-managed-identity#summary-of-managed-identities
 
-# Function and Feature (Script Parameter)
+# Azure Kubernetes Service (AKS) Function and Feature
 
 > **Virtual Network and Subnet**
 
@@ -151,6 +148,10 @@ az feature register --namespace "Microsoft.Compute" --name "EncryptionAtHost"
 
 https://docs.microsoft.com/en-us/azure/aks/enable-host-encryption
 
+> **AKS Node Resource Group**
+
+https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the-aks-node-resource-group
+
 # Virtual Machine
 
 ### Size
@@ -178,10 +179,6 @@ https://docs.microsoft.com/en-us/azure/aks/cluster-configuration?WT.mc_id=Portal
 
 https://docs.microsoft.com/en-us/azure/aks/limit-egress-traffic#required-outbound-network-rules-and-fqdns-for-aks-clusters
 
-# Private DNS Zone
-
-https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-dns#azure-services-dns-zone-configuration
-
 # Proximity Placement Group
 
 :warning: **Limitation**
@@ -194,7 +191,7 @@ https://docs.microsoft.com/en-us/azure/aks/reduce-latency-ppg
 
 https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations
 
-# Terraform Reference
+# Terraform Document
 
 ### Managed Identity
 
