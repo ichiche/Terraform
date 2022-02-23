@@ -1,7 +1,13 @@
 variable "aks_resource_group_name" {
-  description = "Resource Group of Azure Kubernetes Service (Managed Service). This is NOT the Resource Group of VMSS which is actual AKS Instance"
+  description = "Resource Group of Azure Kubernetes Service (Managed Service). This is NOT the Resource Group of AKS Agent Nodes (VMSS)"
   type    = string
   default = "rg-aks-core-poc-eas"
+}
+
+variable "node_resource_group_name" {
+  description = "The name of the Resource Group where the AKS Agent Nodes (VMSS) exist. All Node Pools will be provisioned within this resource group"
+  type    = string
+  default = "rg-aksnode-core-poc-eas"
 }
 
 variable "aks_cluster_identity_name" {
@@ -38,12 +44,6 @@ variable "sku_tier" {
   description = "Kubernetes API server uptime of 99.5% (Free) or 99.9% (Paid without AZone), 99.95% (Paid with AZone). Supported values are 'Free' and 'Paid'"
   type    = string
   default = "Free"
-}
-
-variable "node_resource_group_name" {
-  description = "The name of the Resource Group where the Kubernetes Nodes should exist"
-  type    = string
-  default = "rg-aksnode-core-poc-eas"
 }
 
 variable "outbound_type" {

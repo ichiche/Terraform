@@ -139,10 +139,10 @@ https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insigh
 > **Host-based encryption**
 
 ```PowerShell
-# Verify EncryptionAtHost feature is registered
+# Verify EncryptionAtHost feature is registered by Subscription 
 az feature show --namespace "Microsoft.Compute" --name "EncryptionAtHost"
 
-# Register EncryptionAtHost feature
+# Register EncryptionAtHost feature by Subscription 
 az feature register --namespace "Microsoft.Compute" --name "EncryptionAtHost"
 ```
 
