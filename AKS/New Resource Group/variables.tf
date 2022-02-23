@@ -40,6 +40,12 @@ variable "sku_tier" {
   default = "Free"
 }
 
+variable "node_resource_group_name" {
+  description = "The name of the Resource Group where the Kubernetes Nodes should exist"
+  type    = string
+  default = "rg-aksnode-core-poc-eas"
+}
+
 variable "outbound_type" {
   description = <<EOT
   1. The outbound (egress) routing method which should be used for Kubernetes Cluster. 

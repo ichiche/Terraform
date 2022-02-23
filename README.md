@@ -106,6 +106,10 @@ https://docs.microsoft.com/en-us/azure/aks/use-network-policies#network-policy-o
 
 https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-onboard
 
+> **Host-based encryption**
+
+https://docs.microsoft.com/en-us/azure/aks/enable-host-encryption
+
 ### Issue: Running (0/0 nodes ready) 
 
 https://faultbucket.ca/2021/12/aks-windows-node-problem-after-1-22-upgrade/
