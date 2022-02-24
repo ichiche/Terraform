@@ -160,13 +160,13 @@ variable "user_node_pool_1_name" {
   default     = "app1"
 }
 
-variable "user_node_pool_min_count" {
+variable "user_node_pool_1_min_count" {
   description = "With Node Auto Scale enabled, minimum number of node"
   type    = number
   default = 1
 }
 
-variable "user_node_pool_max_count" {
+variable "user_node_pool_1_max_count" {
   description = "With Node Auto Scale enabled, maximum number of node"
   type    = number
   default = 3
