@@ -58,11 +58,11 @@ variable "outbound_type" {
   default     = "loadBalancer"
 }
 
-/*variable "network_policy" {
+variable "network_policy" {
   description = "Supported values are 'azure' and 'calico'"
   type        = string
-  default     = ""
-}*/
+  default     = "azure"
+}
 
 variable "aks_vnet_id" {
   description = "Resource Id of AKS VNet"
@@ -104,10 +104,16 @@ variable "system_node_pool_name" {
   default     = "systempool"
 }
 
-variable "system_node_pool_vm_count" {
-  description = "Recommend at least 2 nodes for System Node Pool"
+variable "system_node_pool_min_count" {
+  description = "With Node Auto Scale enabled, minimum number of node. Recommend at least 2 nodes for System Node Pool"
   type    = number
   default = 2
+}
+
+variable "system_node_pool_max_count" {
+  description = "With Node Auto Scale enabled, maximum number of node"
+  type    = number
+  default = 3
 }
 
 variable "system_node_pool_os_sku" {
@@ -154,8 +160,14 @@ variable "user_node_pool_1_name" {
   default     = "app1"
 }
 
-variable "user_node_pool_1_vm_count" {
-  description = "Recommend at least 3 nodes for Manual Scale User Node Pool"
+variable "user_node_pool_min_count" {
+  description = "With Node Auto Scale enabled, minimum number of node"
+  type    = number
+  default = 1
+}
+
+variable "user_node_pool_max_count" {
+  description = "With Node Auto Scale enabled, maximum number of node"
   type    = number
   default = 3
 }

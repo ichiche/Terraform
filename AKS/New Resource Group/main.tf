@@ -64,7 +64,8 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 
   default_node_pool {
     name                   = var.system_node_pool_name
-    node_count             = var.system_node_pool_vm_count
+    min_count              = var.system_node_pool_min_count
+    max_count              = var.system_node_pool_max_count
     os_sku                 = var.system_node_pool_os_sku
     os_disk_type           = var.system_node_pool_os_disk_type 
     os_disk_size_gb        = var.system_node_pool_os_disk_size_gb
@@ -73,6 +74,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     max_pods               = var.system_node_pool_max_pods 
     availability_zones     = [1,2,3]
     type                   = "VirtualMachineScaleSets"
+    enable_auto_scaling    = true
     enable_host_encryption = true
     enable_node_public_ip  = false
   }
@@ -96,7 +98,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     network_mode      = "transparent"
     load_balancer_sku = "Standard"
     outbound_type     = var.outbound_type
-    #network_policy    = var.network_policy
+    network_policy    = var.network_policy
   }
   
   oms_agent {
@@ -109,7 +111,8 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 resource "azurerm_kubernetes_cluster_node_pool" "user_node_pool_1" {
   name                   = var.user_node_pool_1_name
   kubernetes_cluster_id  = azurerm_kubernetes_cluster.aks_cluster.id
-  node_count             = var.user_node_pool_1_vm_count
+  min_count              = var.user_node_pool_1_min_count
+  max_count              = var.user_node_pool_1_max_count
   orchestrator_version   = var.user_node_pool_1_orchestrator_version
   os_sku                 = var.user_node_pool_1_os_sku
   os_disk_type           = var.user_node_pool_1_os_disk_type 
@@ -119,6 +122,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "user_node_pool_1" {
   mode                   = var.user_node_pool_1_mode
   max_pods               = var.user_node_pool_1_max_pods
   availability_zones     = [1,2,3]
+  enable_auto_scaling    = true
   enable_host_encryption = true
   enable_node_public_ip  = false
   tags                   = var.tags
