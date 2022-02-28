@@ -34,6 +34,7 @@ Any of the following apply:
   - AKS Resource Group (Precreated)
   - AKS Virtual Network (Resource Level)
   - Private DNS Zone (Resource Level)
+  - Application Gateway
   - Log Analytics Workspace (Resource Level)
 
 **Approach 2**
@@ -53,6 +54,15 @@ https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-dns#azure-s
 This role is assigned to the kubelet managed identity
 
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
+
+### Application Gateway Ingress Controller
+
+Enabled by AKS Add-on
+
+https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview#difference-between-helm-deployment-and-aks-add-on
+
+https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-existing
+
 
 ### Azure CLI Command
 
