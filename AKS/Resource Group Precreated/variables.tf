@@ -76,6 +76,12 @@ variable "private_dns_zone_id" {
   default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/rg-privatedns-core-poc-eas/providers/Microsoft.Network/privateDnsZones/privatelink.eastasia.azmk8s.io"
 }
 
+variable "application_gateway_id" {
+  description = "Resource Id of Application Gateway for Ingress Controller"
+  type    = string
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/AppGateway/providers/Microsoft.Network/applicationGateways/agw-core-prd-sea-001"
+}
+
 variable "log_workspace_id" {
   description = "Resource Id of Log Analytics Workspace for Insight"
   type    = string

@@ -94,6 +94,10 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     network_policy    = var.network_policy
   }
   
+  ingress_application_gateway {
+    gateway_id = var.application_gateway_id
+  }
+
   oms_agent {
     log_analytics_workspace_id = var.log_workspace_id
   }
