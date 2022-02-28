@@ -19,9 +19,9 @@ All scripts in repository are used for DevTest only.
 
 For role assignment during provisioning, grant **User Access Administrator** to **Azure-Run-As-Account** on below resources
 
-- AKS Virtual Network (Resource Level)
-- Private DNS Zone (Resource Level)
-- Container Registry (Resource Level)
+- AKS Virtual Network
+- Private DNS Zone
+- Container Registry
 
 ---
 
@@ -29,17 +29,15 @@ For resource provisioning, grant **Contributor** to **Azure-Run-As-Account** on 
 
 Any of the following apply:
 
-**Approach 1** (Recommended)
-
+**Approach 1 Resource Level** (Recommended)
   - AKS Resource Group (Precreated)
-  - AKS Virtual Network (Resource Level)
-  - Private DNS Zone (Resource Level)
+  - AKS Virtual Network
+  - Private DNS Zone
   - Application Gateway
-  - Log Analytics Workspace (Resource Level)
+  - Log Analytics Workspace
 
-**Approach 2**
-
-  - Subscription Level 
+**Approach 2 Subscription Level**
+  - Subscription that resources be provisioned
 
 # Azure Kubernetes Service (AKS)
 
