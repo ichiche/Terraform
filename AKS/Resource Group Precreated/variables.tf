@@ -161,7 +161,7 @@ variable "system_node_pool_subnet_id" {
 variable "system_node_pool_max_pods" {
   description = "The maximum number of pods per node in an AKS cluster is 250"
   type    = number
-  default = 80
+  default = 30
 }
 # Default Node Pool (System Node Pool) Section End
 
@@ -223,6 +223,6 @@ variable "user_node_pool_1_mode" {
 variable "user_node_pool_1_max_pods" {
   description = "The maximum number of pods per node in an AKS cluster is 250"
   type    = number
-  default = 80
+  default = 30
 }
 # User Node Pool Section End
