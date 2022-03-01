@@ -52,7 +52,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   private_cluster_enabled             = true
   private_cluster_public_fqdn_enabled = false
   azure_policy_enabled                = true
-  local_account_disabled              = true
+  local_account_disabled              = false
   tags                                = var.tags
 
   default_node_pool {
@@ -127,10 +127,19 @@ resource "azurerm_kubernetes_cluster_node_pool" "user_node_pool_1" {
   depends_on = [azurerm_kubernetes_cluster.aks_cluster]
 }
 
-resource "azurerm_role_assignment" "acr" {
+resource "azurerm_role_assignment" "acr1" {
   principal_id                     = azurerm_kubernetes_cluster.aks_cluster.kubelet_identity[0].object_id # This role is assigned to the kubelet managed identity
   role_definition_name             = "AcrPull"
-  scope                            = var.container_registry_id
+  scope                            = var.container_registry_id_1
+  skip_service_principal_aad_check = true
+
+  depends_on = [azurerm_kubernetes_cluster.aks_cluster]
+}
+
+resource "azurerm_role_assignment" "acr2" {
+  principal_id                     = azurerm_kubernetes_cluster.aks_cluster.kubelet_identity[0].object_id # This role is assigned to the kubelet managed identity
+  role_definition_name             = "AcrPull"
+  scope                            = var.container_registry_id_2
   skip_service_principal_aad_check = true
 
   depends_on = [azurerm_kubernetes_cluster.aks_cluster]

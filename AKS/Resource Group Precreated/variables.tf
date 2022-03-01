@@ -88,10 +88,16 @@ variable "log_workspace_id" {
   default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Log/providers/Microsoft.OperationalInsights/workspaces/log-analytics-aks-prd-eas-001"
 }
 
-variable "container_registry_id" {
+variable "container_registry_id_1" {
   description = "Resource Id of Azure Container Registry (ACR)"
   type        = string
   default     = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/ContainerRegistry/providers/Microsoft.ContainerRegistry/registries/cvcoreprdeas001"
+}
+
+variable "container_registry_id_2" {
+  description = "Resource Id of Azure Container Registry (ACR)"
+  type        = string
+  default     = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/ContainerRegistry/providers/Microsoft.ContainerRegistry/registries/cvcoreprdeas002"
 }
 
 variable "tags" {
