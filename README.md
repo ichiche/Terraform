@@ -73,11 +73,11 @@ az feature show --namespace "Microsoft.ContainerService" --name "AKS-IngressAppl
 az feature register --namespace "Microsoft.ContainerService" --name "AKS-IngressApplicationGatewayAddon"
 ```
 
-1. Verify AGIC Managed Identity role assignment 
+2. Verify AGIC Managed Identity role assignment 
 
 AGIC Managed Identity need **Contributor** access to Application Gateway Instance and **Reader** access to Application Gateway Instance's Resource Group
 
-1. Review the requirement by using Helm
+3. Review the requirement by using Helm
 
 https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-install-existing#set-up-aad-pod-identity
 
