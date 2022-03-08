@@ -110,7 +110,7 @@ variable "agw-sit-hk-peak-i1_gateway_ip_configuration_name" {
 variable "agw-sit-hk-peak-i1_vnet_subnet_id" {
   description = "agw-sit-hk-peak-i1 vnet subnet id"
   type    = string
-  default = "/subscriptions/a98b207c-25e4-47f2-8a30-f4a78e09baee/resourceGroups/rg-sit-hk-peak-network/providers/Microsoft.Network/virtualNetworks/vn-sit-hk-peak/subnets/subnet-sit-hk-peak-appgw-v2-1"
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak/subnets/subnet-poc-hk-peak-appgateway-02"
 }
 
 variable "agw-sit-hk-peak-i1_frontend_port" {
@@ -165,9 +165,4 @@ variable "agw-sit-hk-peak-i1_request_routing_rule_var" {
     }
   ]
   type    = list
-}
-
-variable "agw-sit-hk-peak-i1_firewall_policy_id" {
-  type    = string
-  default = "/subscriptions/a98b207c-25e4-47f2-8a30-f4a78e09baee/resourceGroups/rg-sit-hk-peak-app-gateway/providers/Microsoft.Network/applicationGatewayWebApplicationFirewallPolicies/wafpol-sit-hk-peak-i1"
 }
