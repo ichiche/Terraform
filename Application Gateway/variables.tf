@@ -146,7 +146,7 @@ variable "agw-sit-hk-peak-i1_http_listener_var" {
   default = [
     {
       name                           = "agw-sit-hk-peak-i1-httplstn"
-      frontend_ip_configuration_name = "agw-sit-hk-peak-i1-feip"
+      frontend_ip_configuration_name = "agw-sit-hk-peak-i1-feip-private"
       frontend_port_name             = "agw-sit-hk-peak-i1-feport"
       protocol                       = "Http"
     }

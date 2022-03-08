@@ -87,13 +87,14 @@ resource "azurerm_public_ip" "agw-sit-hk-peak-i1_publicip" {
 
 #&nbsp;since these variables are re-used - a locals block makes this more maintainable
 locals {
-  agw_i1_backend_address_pool_name      = "agw-sit-hk-peak-i1-beap"
-  agw_i1_frontend_port_name             = "agw-sit-hk-peak-i1-feport"
-  agw_i1_frontend_ip_configuration_name = "agw-sit-hk-peak-i1-feip"
-  agw_i1_http_setting_name              = "agw-sit-hk-peak-i1-be-htst"
-  agw_i1_listener_name                  = "agw-sit-hk-peak-i1-httplstn"
-  agw_i1_request_routing_rule_name      = "agw-sit-hk-peak-i1-rqrt"
-  agw_i1_redirect_configuration_name    = "agw-sit-hk-peak-i1-rdrcfg"
+  agw_i1_backend_address_pool_name              = "agw-sit-hk-peak-i1-beap"
+  agw_i1_frontend_port_name                     = "agw-sit-hk-peak-i1-feport"
+  agw_i1_frontend_ip_configuration_name_public  = "agw-sit-hk-peak-i1-feip-public"
+  agw_i1_frontend_ip_configuration_name_private = "agw-sit-hk-peak-i1-feip-private"
+  agw_i1_http_setting_name                      = "agw-sit-hk-peak-i1-be-htst"
+  agw_i1_listener_name                          = "agw-sit-hk-peak-i1-httplstn"
+  agw_i1_request_routing_rule_name              = "agw-sit-hk-peak-i1-rqrt"
+  agw_i1_redirect_configuration_name            = "agw-sit-hk-peak-i1-rdrcfg"
 }
 
 resource "azurerm_application_gateway" "agw-sit-hk-peak-i1" {
@@ -121,8 +122,12 @@ resource "azurerm_application_gateway" "agw-sit-hk-peak-i1" {
   }
 
   frontend_ip_configuration {
-    name                          = local.agw_i1_frontend_ip_configuration_name
+    name                          = local.agw_i1_frontend_ip_configuration_name_public
     public_ip_address_id          = azurerm_public_ip.agw-sit-hk-peak-i1_publicip.id
+  }
+
+  frontend_ip_configuration {
+    name                          = local.agw_i1_frontend_ip_configuration_name_private
     subnet_id                     = var.agw-sit-hk-peak-i1_vnet_subnet_id
     private_ip_address_allocation = "Static"
     private_ip_address            = "10.1.18.4"
