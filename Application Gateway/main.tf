@@ -79,6 +79,8 @@ resource "azurerm_public_ip" "agw-sit-hk-peak-i1_publicip" {
   location            = var.agw-sit-hk-peak-i1_location
   allocation_method   = "Static"
   sku = "Standard"
+
+  depends_on = [azurerm_resource_group.wafpol-sit-hk-peak-i1_rg]
 }
 
 #&nbsp;since these variables are re-used - a locals block makes this more maintainable
@@ -96,6 +98,8 @@ resource "azurerm_application_gateway" "agw-sit-hk-peak-i1" {
   name                = var.agw-sit-hk-peak-i1_name_var
   resource_group_name = var.agw-sit-hk-peak-i1_resource_group_name
   location            = var.agw-sit-hk-peak-i1_location
+  firewall_policy_id  = azurerm_web_application_firewall_policy.wafpol-sit-hk-peak-i1_firewallpolicy.id
+
   # Azone
   zones = ["1", "2", "3"]
 
