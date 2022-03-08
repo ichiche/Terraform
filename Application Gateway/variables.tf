@@ -71,11 +71,6 @@ variable "wafpol-sit-hk-peak-i1_policysetting_mode_max_request_body_size_in_kb" 
   type    = string
 }
 
-variable "agw-sit-hk-peak-i1_resource_group_name" {
-  type    = string
-  default = "rg-sit-hk-peak-app-gateway"
-}
-
 variable "agw-sit-hk-peak-i1_location" {
   type    = string
   default = "eastasia"
@@ -116,6 +111,11 @@ variable "agw-sit-hk-peak-i1_vnet_subnet_id" {
 variable "agw-sit-hk-peak-i1_frontend_port" {
   type    = string
   default = "80"
+}
+
+variable "agw-sit-hk-peak-i1_frontend_private_ip" {
+  type    = string
+  default = "10.1.18.4"
 }
 
 # dummy address

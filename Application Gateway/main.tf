@@ -77,7 +77,7 @@ resource "azurerm_web_application_firewall_policy" "wafpol-sit-hk-peak-i1_firewa
 
 resource "azurerm_public_ip" "agw-sit-hk-peak-i1_publicip" {
   name                = var.agw-sit-hk-peak-i1_publicip_name
-  resource_group_name = var.agw-sit-hk-peak-i1_resource_group_name
+  resource_group_name = var.wafpol-sit-hk-peak-i1_rg_name_var
   location            = var.agw-sit-hk-peak-i1_location
   allocation_method   = "Static"
   sku = "Standard"
@@ -99,7 +99,7 @@ locals {
 
 resource "azurerm_application_gateway" "agw-sit-hk-peak-i1" {
   name                = var.agw-sit-hk-peak-i1_name_var
-  resource_group_name = var.agw-sit-hk-peak-i1_resource_group_name
+  resource_group_name = var.wafpol-sit-hk-peak-i1_rg_name_var
   location            = var.agw-sit-hk-peak-i1_location
   firewall_policy_id  = azurerm_web_application_firewall_policy.wafpol-sit-hk-peak-i1_firewallpolicy.id
 
@@ -130,7 +130,7 @@ resource "azurerm_application_gateway" "agw-sit-hk-peak-i1" {
     name                          = local.agw_i1_frontend_ip_configuration_name_private
     subnet_id                     = var.agw-sit-hk-peak-i1_vnet_subnet_id
     private_ip_address_allocation = "Static"
-    private_ip_address            = "10.1.18.4"
+    private_ip_address            = var.agw-sit-hk-peak-i1_frontend_private_ip
   }
 
   # dyanmic
