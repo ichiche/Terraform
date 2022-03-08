@@ -79,7 +79,8 @@ variable "private_dns_zone_id" {
 variable "application_gateway_id" {
   description = "Resource Id of Application Gateway for Ingress Controller"
   type    = string
-  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/AppGateway/providers/Microsoft.Network/applicationGateways/agw-core-prd-sea-001"
+  #default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/AppGateway/providers/Microsoft.Network/applicationGateways/agw-core-prd-sea-001"
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/rg-sit-hk-peak-app-gateway/providers/Microsoft.Network/applicationGateways/agw-sit-hk-peak-i1"
 }
 
 variable "log_workspace_id" {
