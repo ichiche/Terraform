@@ -119,8 +119,10 @@ resource "azurerm_application_gateway" "agw-sit-hk-peak-i1" {
   }
 
   frontend_ip_configuration {
-    name                 = local.agw_i1_frontend_ip_configuration_name
-    public_ip_address_id = azurerm_public_ip.agw-sit-hk-peak-i1_publicip.id
+    name                          = local.agw_i1_frontend_ip_configuration_name
+    public_ip_address_id          = azurerm_public_ip.agw-sit-hk-peak-i1_publicip.id
+    subnet_id                     = var.agw-sit-hk-peak-i1_vnet_subnet_id
+    private_ip_address_allocation = "Static"
   }
 
   # dyanmic
