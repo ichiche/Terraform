@@ -230,6 +230,10 @@ https://registry.terraform.io/modules/bcochofel/aks/azurerm/latest/examples/user
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment
 
+### Application Gateway
+
+https://registry.terraform.io/providers/hashicorp/azurerm/2.97.0/docs/resources/application_gateway
+
 ### Private DNZ Zone
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_dns_zone
@@ -245,7 +249,6 @@ https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/
 ### Attaching a Container Registry to a Kubernetes Cluster
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry#example-usage-attaching-a-container-registry-to-a-kubernetes-cluster
-
 
 ### Issue Log
 
