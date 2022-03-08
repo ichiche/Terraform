@@ -53,34 +53,6 @@ This role is assigned to the kubelet managed identity
 
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
 
-### Application Gateway Ingress Controller
-
-##### Enabled by AKS Add-on
-
-https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview#difference-between-helm-deployment-and-aks-add-on
-
-https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-existing
-
-##### Troubleshooting
-
-1. Verify the feature is registered
-
-```PowerShell
-# Verify AKS-IngressApplicationGatewayAddon feature is registered by Subscription 
-az feature show --namespace "Microsoft.ContainerService" --name "AKS-IngressApplicationGatewayAddon"
-
-# Register AKS-IngressApplicationGatewayAddon feature by Subscription 
-az feature register --namespace "Microsoft.ContainerService" --name "AKS-IngressApplicationGatewayAddon"
-```
-
-2. Verify AGIC Managed Identity role assignment 
-
-AGIC Managed Identity need **Contributor** access to Application Gateway Instance and **Reader** access to Application Gateway Instance's Resource Group
-
-3. Review the requirement by using Helm
-
-https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-install-existing#set-up-aad-pod-identity
-
 ### Azure CLI Command
 
 https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create
@@ -178,6 +150,40 @@ https://docs.microsoft.com/en-us/azure/aks/enable-host-encryption
 > **AKS Node Resource Group**
 
 https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the-aks-node-resource-group
+
+# Application Gateway
+
+### Application Gateway Ingress Controller
+
+##### List of annotation
+
+https://azure.github.io/application-gateway-kubernetes-ingress/annotations/
+
+##### Enabled by AKS Add-on
+
+https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview#difference-between-helm-deployment-and-aks-add-on
+
+https://docs.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-existing
+
+##### Troubleshooting
+
+1. Verify the feature is registered
+
+```PowerShell
+# Verify AKS-IngressApplicationGatewayAddon feature is registered by Subscription 
+az feature show --namespace "Microsoft.ContainerService" --name "AKS-IngressApplicationGatewayAddon"
+
+# Register AKS-IngressApplicationGatewayAddon feature by Subscription 
+az feature register --namespace "Microsoft.ContainerService" --name "AKS-IngressApplicationGatewayAddon"
+```
+
+2. Verify AGIC Managed Identity role assignment 
+
+AGIC Managed Identity need **Contributor** access to Application Gateway Instance and **Reader** access to Application Gateway Instance's Resource Group
+
+3. Review the requirement by using Helm
+
+https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-install-existing#set-up-aad-pod-identity
 
 # Virtual Machine
 
