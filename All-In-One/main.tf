@@ -56,7 +56,7 @@ resource "azurerm_role_assignment" "aks_vnet" {
 resource "azurerm_role_assignment" "private_dns_zone" {
   principal_id                     = azurerm_user_assigned_identity.aks_cluster_identity.principal_id
   role_definition_name             = "Private DNS Zone Contributor"
-  scope                            = var.private_dns_zone_id
+  scope                            = azurerm_private_dns_zone.dns.id
   skip_service_principal_aad_check = true
 
   depends_on = [azurerm_user_assigned_identity.aks_cluster_identity]
