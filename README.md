@@ -39,6 +39,19 @@ Any of the following apply:
 **Approach 2 Subscription Level**
   - Subscription that resources be provisioned
 
+# All-In-One Script Prerequisite
+
+**Resource Group pre-created**
+- Private DNS Zone
+
+**New Resource Group**
+- Application Gateway
+- Azure Kubernetes Service (AKS)
+
+**Existing Resource**
+- AKS Virtual Network
+- Log Analytics Workspace
+
 # Azure Kubernetes Service (AKS)
 
 ### Private DNS Zone for AKS
@@ -158,6 +171,8 @@ https://docs.microsoft.com/en-us/azure/aks/faq#can-i-provide-my-own-name-for-the
 ##### List of annotation
 
 https://azure.github.io/application-gateway-kubernetes-ingress/annotations/
+
+https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-annotations
 
 ##### Enabled by AKS Add-on
 

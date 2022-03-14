@@ -16,10 +16,17 @@ provider "azurerm" {
   features {}
 }
 
+resource "azurerm_resource_group" "aks_rg" {
+  name     = var.aks_resource_group_name
+  location = var.aks_location
+}
+
 resource "azurerm_user_assigned_identity" "aks_cluster_identity" {
   name                = var.aks_cluster_identity_name
   location            = var.aks_location
   resource_group_name = var.aks_resource_group_name
+
+  depends_on = [azurerm_resource_group.aks_rg]
 }
 
 resource "azurerm_role_assignment" "aks_vnet" {

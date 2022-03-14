@@ -1,7 +1,7 @@
 variable "wafpol-sit-hk-peak-i1_rg_location_var" {
   description = "resource group location for the wafpol-sit-hk-peak-i1 policy"
   type    = string
-  default = "eastasia"
+  default = "East Asia"
 }
 
 variable "wafpol-sit-hk-peak-i1_rg_name_var" {
@@ -19,7 +19,7 @@ variable "wafpol-sit-hk-peak-i1_firewallpolicy_name_var" {
 variable "wafpol-sit-hk-peak-i1_firewallpolicy_location_var" {
   description = "resource location for wafpol-sit-hk-peak-i1"
   type    = string
-  default = "eastasia"
+  default = "East Asia"
 }
 
 variable "wafpol-sit-hk-peak-i1_custom_rules_var" {
@@ -73,7 +73,7 @@ variable "wafpol-sit-hk-peak-i1_policysetting_mode_max_request_body_size_in_kb" 
 
 variable "agw-sit-hk-peak-i1_location" {
   type    = string
-  default = "eastasia"
+  default = "East Asia"
 }
 
 variable "agw-sit-hk-peak-i1_name_var" {
