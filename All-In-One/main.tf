@@ -350,4 +350,3 @@ resource "azurerm_role_assignment" "acr2" {
 
   depends_on = [azurerm_kubernetes_cluster.aks_cluster]
 }
-
