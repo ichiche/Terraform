@@ -1,23 +1,23 @@
 variable "wafpol-sit-hk-peak-i1_rg_location_var" {
-  description = "resource group location for the wafpol-sit-hk-peak-i1 policy"
+  description = "Azure Region of Resource Group of WAF Policy"
   type    = string
   default = "East Asia"
 }
 
 variable "wafpol-sit-hk-peak-i1_rg_name_var" {
-  description = "resource group name for the wafpol-sit-hk-peak-i1 policy"
+  description = "Resource Group of the WAF Policy"
   type    = string
   default = "rg-sit-hk-peak-app-gateway"
 }
 
 variable "wafpol-sit-hk-peak-i1_firewallpolicy_name_var" {
-  description = "resource naming for wafpol-sit-hk-peak-i1"
+  description = "Name of WAF Policy"
   type    = string
   default = "wafpol-sit-hk-peak-i1"
 }
 
 variable "wafpol-sit-hk-peak-i1_firewallpolicy_location_var" {
-  description = "resource location for wafpol-sit-hk-peak-i1"
+  description = "Azure Region of WAF Policy"
   type    = string
   default = "East Asia"
 }
@@ -120,16 +120,17 @@ variable "agw-sit-hk-peak-i1_frontend_private_ip" {
 
 # dummy address
 variable "agw-sit-hk-peak-i1_backend_address_pool_var" {
+  type    = list
   default = [
     {
       name = "agw-sit-hk-peak-i1-beap"
       fqdns = ["8.8.8.8"]
     }
   ]
-  type    = list
 }
 
 variable "agw-sit-hk-peak-i1_backend_http_settings_var" {
+  type    = list
   default = [
     {
       name                  = "agw-sit-hk-peak-i1-be-htst"
@@ -139,10 +140,10 @@ variable "agw-sit-hk-peak-i1_backend_http_settings_var" {
       request_timeout       = "20"
     }
   ]
-  type    = list
 }
 
 variable "agw-sit-hk-peak-i1_http_listener_var" {
+  type    = list
   default = [
     {
       name                           = "agw-sit-hk-peak-i1-httplstn"
@@ -151,10 +152,10 @@ variable "agw-sit-hk-peak-i1_http_listener_var" {
       protocol                       = "Http"
     }
   ]
-  type    = list
 }
 
 variable "agw-sit-hk-peak-i1_request_routing_rule_var" {
+  type    = list
   default = [
     {
       name                       = "agw-sit-hk-peak-i1-rqrt"
@@ -164,5 +165,4 @@ variable "agw-sit-hk-peak-i1_request_routing_rule_var" {
       backend_http_settings_name = "agw-sit-hk-peak-i1-be-htst"
     }
   ]
-  type    = list
 }
