@@ -220,6 +220,12 @@ variable "aks_name" {
   default = "aks-sit-eas-001"
 }
 
+variable "agic_identity_name" {
+  description = "User Assigned Identity of Azure Kubernetes Service (Managed Service)"
+  type    = string
+  default = "ingressapplicationgateway-aks-sit-eas-001"
+}
+
 variable "kubernetes_version" {
   description = "Run PowerShell Az Module Command: Get-AzAksVersion -Location 'East Asia' to retrieve available AKS version"
   type        = string

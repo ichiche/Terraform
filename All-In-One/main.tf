@@ -317,6 +317,23 @@ resource "azurerm_kubernetes_cluster_node_pool" "user_node_pool_1" {
   depends_on = [azurerm_kubernetes_cluster.aks_cluster]
 }
 
+data "azurerm_user_assigned_identity" "agic" {
+  name                = var.agic_identity_name
+  resource_group_name = var.node_resource_group_name
+
+  depends_on = [azurerm_kubernetes_cluster.aks_cluster]
+}
+
+resource "azurerm_role_assignment" "agic" {
+  principal_id                     = azurerm_user_assigned_identity.agic.id
+  role_definition_name             = "Contributor"
+  #scope                            = azurerm_resource_group.wafpol-sit-hk-peak-i1_rg.id
+  scope                            = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/rg-sit-hk-peak-app-gateway"
+  skip_service_principal_aad_check = true
+
+  depends_on = [azurerm_user_assigned_identity.agic]
+}
+
 resource "azurerm_role_assignment" "acr1" {
   principal_id                     = azurerm_kubernetes_cluster.aks_cluster.kubelet_identity[0].object_id # This role is assigned to the kubelet managed identity
   role_definition_name             = "AcrPull"
