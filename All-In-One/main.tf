@@ -331,7 +331,7 @@ resource "azurerm_role_assignment" "agic" {
   scope                            = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/rg-sit-hk-peak-app-gateway"
   skip_service_principal_aad_check = true
 
-  depends_on = [azurerm_user_assigned_identity.agic]
+  depends_on = [data.azurerm_user_assigned_identity.agic]
 }
 
 resource "azurerm_role_assignment" "acr1" {
