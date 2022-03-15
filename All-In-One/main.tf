@@ -327,8 +327,7 @@ data "azurerm_user_assigned_identity" "agic" {
 resource "azurerm_role_assignment" "agic" {
   principal_id                     = data.azurerm_user_assigned_identity.agic.principal_id
   role_definition_name             = "Contributor"
-  #scope                            = azurerm_resource_group.wafpol-sit-hk-peak-i1_rg.id
-  scope                            = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/rg-sit-hk-peak-app-gateway"
+  scope                            = azurerm_resource_group.wafpol-sit-hk-peak-i1_rg.id
   skip_service_principal_aad_check = true
 
   depends_on = [data.azurerm_user_assigned_identity.agic]
