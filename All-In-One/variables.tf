@@ -223,7 +223,8 @@ variable "aks_name" {
 variable "agic_identity_name" {
   description = "User Assigned Identity of AGIC, naming must be 'ingressapplicationgateway-' plus the value of aks_name"
   type    = string
-  default = format("ingressapplicationgateway-%s!", var.aks_name)
+  default = "ingressapplicationgateway-aks-sit-eas-001"
+  #default = format("ingressapplicationgateway-%s!", var.aks_name)
 }
 
 variable "kubernetes_version" {
