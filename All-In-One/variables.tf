@@ -115,7 +115,7 @@ variable "agw-sit-hk-peak-i1_frontend_port" {
 
 variable "agw-sit-hk-peak-i1_frontend_private_ip" {
   type    = string
-  default = "10.1.18.4"
+  default = "10.10.2.4"
 }
 
 # dummy address
