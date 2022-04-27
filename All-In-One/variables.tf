@@ -105,7 +105,7 @@ variable "agw-sit-hk-peak-i1_gateway_ip_configuration_name" {
 variable "agw-sit-hk-peak-i1_vnet_subnet_id" {
   description = "agw-sit-hk-peak-i1 vnet subnet id"
   type    = string
-  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak/subnets/subnet-poc-hk-peak-appgateway-02"
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vnet-hub-prd-eas-001/subnets/subnet-poc-hk-peak-appgateway-02"
 }
 
 variable "agw-sit-hk-peak-i1_frontend_port" {
@@ -202,6 +202,12 @@ variable "node_resource_group_name" {
   default = "rg-aksnode-core-poc-eas"
 }
 
+variable "disk_encryption_set_id" {
+  description = "Retrieve the DiskEncryptionSet value"
+  type    = string
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/KeyVault/providers/Microsoft.Compute/diskEncryptionSets/DiskEncryptionSet-AKS-Prod"
+}
+
 variable "aks_cluster_identity_name" {
   description = "User Assigned Identity of Azure Kubernetes Service (Managed Service)"
   type    = string
@@ -266,7 +272,7 @@ variable "network_policy" {
 variable "aks_vnet_id" {
   description = "Resource Id of AKS VNet"
   type    = string
-  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak"
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vnet-hub-prd-eas-001"
 }
 
 variable "log_workspace_id" {
@@ -342,7 +348,7 @@ variable "system_node_pool_vm_size" {
 variable "system_node_pool_subnet_id" {
   description = "Resource Id of Subnet for AKS VNet customization"
   type    = string
-  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vn-poc-hk-peak/subnets/subnet-poc-hk-peak-aks"
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vnet-hub-prd-eas-001/subnets/subnet-poc-hk-peak-aks"
 }
 
 variable "system_node_pool_max_pods" {

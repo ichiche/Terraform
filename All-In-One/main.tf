@@ -239,6 +239,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   sku_tier                            = var.sku_tier
   node_resource_group                 = var.node_resource_group_name
   private_dns_zone_id                 = azurerm_private_dns_zone.dns.id
+  disk_encryption_set_id              = var.disk_encryption_set_id
   private_cluster_enabled             = true
   private_cluster_public_fqdn_enabled = false
   azure_policy_enabled                = true
