@@ -105,7 +105,7 @@ variable "agw-sit-hk-peak-i1_gateway_ip_configuration_name" {
 variable "agw-sit-hk-peak-i1_vnet_subnet_id" {
   description = "agw-sit-hk-peak-i1 vnet subnet id"
   type    = string
-  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vnet-hub-prd-eas-001/subnets/subnet-poc-hk-peak-appgateway-02"
+  default = "/subscriptions/7a2dec40-395f-45a9-b6b0-bef1593ce760/resourceGroups/Network/providers/Microsoft.Network/virtualNetworks/vnet-hub-prd-eas-001/subnets/subnet-poc-hk-peak-appgateway"
 }
 
 variable "agw-sit-hk-peak-i1_frontend_port" {
