@@ -86,10 +86,10 @@ variable "agw-sit-hk-peak-i1_publicip_name" {
   default = "pip-agw-sit-hk-peak-i1"
 }
 
-# autoscale_configuration (min 6, max 40)
+# autoscale_configuration
 variable "agw-sit-hk-peak-i1_sku_capability_min" {
   type    = string
-  default = "6"
+  default = "1"
 }
 
 variable "agw-sit-hk-peak-i1_sku_capability_max" {
